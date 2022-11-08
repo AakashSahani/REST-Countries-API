@@ -3,7 +3,7 @@ import React from 'react';
 function Filter() {
 	return (
 		<div className="container">
-			<span>Filter by Region</span>
+			<button>Filter by Region</button>
 			<div className="filter">
 				<button>Africa</button>
 				<button>America</button>

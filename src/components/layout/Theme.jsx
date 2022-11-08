@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Theme() {
-	return <div>Theme</div>;
+	return <div>🌙 Dark Theme</div>;
 }
 
 export default Theme;
