@@ -39,6 +39,11 @@ header {
 	background-color: var(--DarkBlue);
 }
 
+.theme {
+	background: none;
+	border: none;
+}
+
 main {
 	background-color: var(--VeryDarkBlue);
 	flex: 1;
@@ -106,4 +111,34 @@ button:hover {
 	padding: 1rem 0.5rem;
 	width: 100%;
 	text-align: left;
+}
+
+.card {
+	width: 225px;
+	height: fit-content;
+	background-color: var(--DarkBlue);
+	display: flex;
+	box-shadow: 0 0 2px 0 var(--DarkBlue);
+	flex-direction: column;
+	justify-content: space-evenly;
+	border-radius: 0.25rem;
+	padding-bottom: 1rem;
+}
+.card img {
+	border-radius: 0.25rem 0.25rem 0 0;
+	width: 100%;
+	height: auto;
+}
+
+.card h2 {
+	/* margin-top: 0.5rem 0; */
+	padding: 1rem;
+	font-size: 1.5rem;
+}
+
+.card ul {
+	list-style: none;
+	/* margin: 0.5rem 0; */
+	font-size: 14px;
+	padding: 0 1rem 1rem 1rem;
 }

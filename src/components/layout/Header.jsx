@@ -1,11 +1,10 @@
 import React from 'react';
-import Logo from './Logo';
 import Theme from './Theme';
 
 function Header() {
 	return (
 		<header>
-			<Logo />
+			<h1>Where in the world?</h1>
 			<Theme />
 		</header>
 	);
