@@ -1,0 +1,50 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-width: 100vw;
+	min-height: 100vh;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+}
+
+.country-filter {
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+}
+
+.filter {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
+}
+
+.filter button {
+	background: transparent;
+	border: none;
+	text-align: left;
+}
+
+.search {
+	border: 1px solid black;
+	height: fit-content;
+}
+
+.search input {
+	/* height: 2rem; */
+	padding: 1rem 0;
+}
