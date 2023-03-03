@@ -5,7 +5,7 @@ function Card({ country }) {
 	return (
 		<div className="card">
 			<div className="flag">
-				<img src={country.flags.svg} alt="" />
+				<img src={country.flags.svg} alt={country.flags.alt} />
 			</div>
 			<div className="card-text">
 				<h2>{country.name.common}</h2>
