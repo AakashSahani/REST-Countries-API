@@ -4,13 +4,15 @@ function Card({ country }) {
 	// console.log(country);
 	return (
 		<div className="card">
-			<img src={country[0].flags.svg} alt="" />
+			<div className="flag">
+				<img src={country.flags.svg} alt="" />
+			</div>
 			<div className="card-text">
-				<h2>{country[0].name.common}</h2>
+				<h2>{country.name.common}</h2>
 				<ul>
-					<li>Population: {country[0].population}</li>
-					<li>Region: {country[0].region}</li>
-					<li>Capital: {country[0].capital}</li>
+					<li>Population: {country.population}</li>
+					<li>Region: {country.region}</li>
+					<li>Capital: {country.capital}</li>
 				</ul>
 			</div>
 		</div>

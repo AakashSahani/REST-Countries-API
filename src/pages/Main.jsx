@@ -6,12 +6,20 @@ import Card from '../components/shared/Card';
 import CountryContext from '../context/CountryContext';
 
 function Main() {
-	const [country, setCountry] = useState(CountryData);
+	const { country, setCountry, getCountry } = useContext(CountryContext);
+	useEffect(() => {
+		getCountry();
+	}, []);
+	console.log(country);
 	return (
 		<main>
 			<CountryFilter />
 			<div className="country-grid">
-				<Card country={country} />
+				{country.length === 0
+					? 'Loading Data...'
+					: country.map((cntry) => <Card country={cntry} />)}
+				hello
+				{/* <Card country={country} /> */}
 			</div>
 		</main>
 	);

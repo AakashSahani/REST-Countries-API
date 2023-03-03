@@ -130,19 +130,31 @@ ul {
 
 .card {
 	width: 225px;
-	height: fit-content;
+	min-height: fit-content;
+	height: 350px;
 	background-color: var(--DarkBlue);
-	display: flex;
 	box-shadow: 0 0 2px 0 var(--DarkBlue);
-	flex-direction: column;
-	justify-content: space-evenly;
 	border-radius: 0.25rem;
-	padding-bottom: 1rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.card .flag {
+	border-radius: 0.25rem 0.25rem 0 0;
+	width: 100%;
+	height: 150px;
+	flex: 1;
+}
+
+.card .card-text {
+	flex: 1;
+	height: 150px;
 }
 .card img {
 	border-radius: 0.25rem 0.25rem 0 0;
 	width: 100%;
 	height: auto;
+	object-fit: contain;
 }
 
 .card h2 {
