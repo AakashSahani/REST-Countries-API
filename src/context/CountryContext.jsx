@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { createContext, useState } from 'react';
 
 const CountryContext = createContext();
@@ -16,7 +18,7 @@ export const CountryProvider = ({ children }) => {
 	const getCountry = async function (countryName) {
 		await fetch(`https://restcountries.com/v3.1/name/${countryName}`)
 			.then((res) => res.json())
-			.then((data) => setCountry((country) => data))
+			.then((data) => setCountry(data))
 			.catch((err) => {
 				alert(err.message);
 			});
@@ -35,6 +37,10 @@ export const CountryProvider = ({ children }) => {
 			{children}
 		</CountryContext.Provider>
 	);
+};
+
+CountryProvider.propTypes = {
+	children: PropTypes.object,
 };
 
 export default CountryContext;

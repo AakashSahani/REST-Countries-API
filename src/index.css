@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito+Sans:wght@300;600;800&display=swap');
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 :root {
 	/* (Dark Mode Elements) */
 	--DarkBlue: hsl(209, 23%, 22%);
@@ -19,6 +21,11 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+}
+
+#root {
+	height: 100vh;
+	min-height: fit-content;
 }
 
 body {
@@ -172,26 +179,6 @@ ul {
 	margin: 0.25rem 0;
 }
 
-.detail-main {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	padding-top: 5rem;
-	font-size: 1rem;
-}
-
-.detail-main h2 {
-	font-weight: 700;
-}
-
-.detail-main button {
-	border: 1px solid var(--DarkBlue);
-}
-
-.detail-main button:hover {
-	border: 1px solid white;
-}
-
 .back {
 	background-color: var(--DarkBlue);
 	border: none;
@@ -266,6 +253,34 @@ ul {
 	border-radius: 0.25rem;
 }
 
+.notFound {
+	background-color: var(--DarkBlue);
+	flex: 1;
+	max-height: inherit;
+	height: 90vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+	gap: 4rem;
+}
+.notFound h1 {
+	font-size: 4rem;
+}
+
+.notFound p {
+	font-size: 1.4rem;
+}
+
+.notFound button {
+	background-color: var(--DarkBlue);
+	margin: 0.25rem 0;
+	padding: 1rem;
+	box-shadow: 0 0 2px 0 var(--DarkBlue);
+	border-radius: 0.25rem;
+	border: 1px solid var(--DarkGray);
+}
+
 @media (max-width: 601px) {
 	header h1 {
 		font-size: 1.2rem;
@@ -280,14 +295,6 @@ ul {
 		/* width: 90vw; */
 		width: fit-content;
 		flex: 1;
-	}
-	.detail {
-		display: flex;
-		flex-flow: column;
-		margin: auto;
-		justify-content: space-between;
-		flex: 1;
-		width: 100vw;
 	}
 	.border {
 		width: 100%;
