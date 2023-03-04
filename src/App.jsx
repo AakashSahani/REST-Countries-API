@@ -1,9 +1,9 @@
+import React from 'react';
 import Header from './components/layout/Header';
-import Main from './pages/Main';
+import Main from './pages/Country';
 import Detail from './pages/Detail';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import CountryContext, { CountryProvider } from './context/CountryContext';
-import { useContext } from 'react';
+import { CountryProvider } from './context/CountryContext';
 
 function App() {
 	return (

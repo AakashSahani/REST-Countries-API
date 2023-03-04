@@ -1,38 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useContext } from 'react';
-import CountryContext from '../../context/CountryContext';
+import React, { useState } from 'react';
 
 function Search() {
-	const { country, setCountry, getAllCountries } = useContext(CountryContext);
+	const [text, setText] = useState('');
 	const handleChange = (e) => {
-		console.log(e.target.value);
+		setText(e.currentTarget.value);
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		// if (text === '') {
-		// 	console.log('Please enter something');
-		// } else {
-		getAllCountries();
-		// getAllCountries(text);
-		// setText('');
-		// setLoading(false);
-		// }
+		if (text != '') {
+			console.log(text);
+		} else {
+			console.log('please enter a value');
+		}
+		setText('');
 	};
 	return (
 		<div className="search">
-			{/* <Link to="/country"> */}
 			<form onSubmit={handleSubmit}>
 				<input
 					type="text"
 					name="search"
 					id="search"
+					value={text}
 					placeholder="🔍 Search for a country..."
 					onChange={handleChange}
 				/>
 			</form>
-			{/* </Link> */}
 		</div>
 	);
 }
