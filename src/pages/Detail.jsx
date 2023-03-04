@@ -1,16 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
 import CardDetail from '../components/shared/CardDetail';
-import CountryData from '../data/CountryData';
+import CountryContext from '../context/CountryContext';
+import { useParams } from 'react-router-dom';
 
 function Detail() {
-	const [country, setCountry] = useState(CountryData);
+	const { country, getCountry } = useContext(CountryContext);
+	const { name: countryName } = useParams();
+	useEffect(() => {
+		getCountry(countryName);
+	}, [countryName]);
 	return (
 		<main className="detail-main">
 			<Link to="/">
 				<button className="back">⬅️ Back</button>
 			</Link>
-			<CardDetail country={country} />
+			{country.length === 0 ? (
+				'Loading Country Info'
+			) : (
+				<CardDetail country={country} />
+			)}
 		</main>
 	);
 }

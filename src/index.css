@@ -28,6 +28,7 @@ body {
 	color: var(--White);
 	display: flex;
 	flex-direction: column;
+	overflow-x: hidden;
 }
 
 header {
@@ -44,6 +45,11 @@ header {
 	border: none;
 	font-weight: 700;
 	font-size: 1.1rem;
+}
+
+a {
+	text-decoration: none;
+	color: white;
 }
 
 main {
@@ -89,7 +95,7 @@ ul {
 .country-grid {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-start;
+	justify-content: space-around;
 }
 
 .country-grid > * {
@@ -131,42 +137,37 @@ ul {
 .card {
 	width: 225px;
 	min-height: fit-content;
-	height: 350px;
 	background-color: var(--DarkBlue);
 	box-shadow: 0 0 2px 0 var(--DarkBlue);
 	border-radius: 0.25rem;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 }
 
-.card .flag {
-	border-radius: 0.25rem 0.25rem 0 0;
-	width: 100%;
-	height: 150px;
-	flex: 1;
-}
-
-.card .card-text {
-	flex: 1;
-	height: 150px;
+.card {
+	padding-bottom: 1rem;
 }
 .card img {
 	border-radius: 0.25rem 0.25rem 0 0;
 	width: 100%;
 	height: auto;
-	object-fit: contain;
+	object-fit: cover;
 }
 
 .card h2 {
-	/* margin-top: 0.5rem 0; */
 	padding: 1rem;
 	font-size: 1.5rem;
 }
 
 .card ul {
 	list-style: none;
-	font-size: 14px;
+	font-size: 1rem;
 	padding: 0 1rem 1rem 1rem;
+}
+
+.card ul > li {
+	margin: 0.25rem 0;
 }
 
 .detail-main {
@@ -232,8 +233,22 @@ ul {
 	font-weight: 600;
 }
 
+.detail-text .container ul {
+	gap: 0.25rem;
+}
+
+.lang,
+.lang ul {
+	display: flex;
+	align-items: center;
+}
+.lang ul li {
+	margin: 0 0.5rem;
+}
+
 .detail .border {
 	display: flex;
+	align-items: center;
 }
 
 .border p {
@@ -241,7 +256,7 @@ ul {
 	font-weight: 600;
 }
 
-.detail button {
+.detail a {
 	background-color: var(--DarkBlue);
 	margin: 0 0.5rem;
 	padding: 0.25rem 1rem;

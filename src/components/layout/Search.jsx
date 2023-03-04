@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import CountryContext from '../../context/CountryContext';
 
 function Search() {
-	const { country, setCountry, getCountry } = useContext(CountryContext);
+	const { country, setCountry, getAllCountries } = useContext(CountryContext);
 	const handleChange = (e) => {
 		console.log(e.target.value);
 	};
@@ -14,8 +14,8 @@ function Search() {
 		// if (text === '') {
 		// 	console.log('Please enter something');
 		// } else {
-		getCountry();
-		// getCountry(text);
+		getAllCountries();
+		// getAllCountries(text);
 		// setText('');
 		// setLoading(false);
 		// }
