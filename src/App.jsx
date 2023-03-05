@@ -5,6 +5,7 @@ import Detail from './pages/Detail';
 import NotFound from './pages/NotFound';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { CountryProvider } from './context/CountryContext';
+import './index.css';
 
 function App() {
 	return (

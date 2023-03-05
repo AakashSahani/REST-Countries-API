@@ -16,18 +16,20 @@ function Search() {
 		setText('');
 	};
 	return (
-		<div className="search">
-			<form onSubmit={handleSubmit}>
-				<input
-					type="text"
-					name="search"
-					id="search"
-					value={text}
-					placeholder="🔍 Search for a country..."
-					onChange={handleChange}
-				/>
-			</form>
-		</div>
+		<form
+			onSubmit={handleSubmit}
+			className="bg-darkBlue w-full sm:w-fit h-12 flex items-center rounded-md shadow-md"
+		>
+			<input
+				type="text"
+				name="search"
+				id="search"
+				value={text}
+				placeholder="Search for a country..."
+				onChange={handleChange}
+				className="bg-darkBlue text-white w-full h-full px-4 rounded-md"
+			/>
+		</form>
 	);
 }
 
