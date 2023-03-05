@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import CountryContext from '../../context/CountryContext';
 
 function Filter() {
+	const { filterCountries } = useContext(CountryContext);
+	const [filter, setFilter] = useState('');
+	const handleSelect = (e) => {
+		if (e.currentTarget.value != '') {
+			setFilter(e.currentTarget.value);
+		}
+	};
+	useEffect(() => {
+		filterCountries(filter);
+	}, [filter]);
+
 	return (
-		<div className="flex flex-col w-1/2 sm:w-fit shadow-md rounded-md bg-darkBlue text-white px-4 h-12 justify-center items-center">
+		<form className="flex flex-col w-1/2 sm:w-fit shadow-md rounded-md bg-darkBlue text-white px-4 h-12 justify-center items-center">
 			<label
 				htmlFor="region"
 				className="bg-darkBlue p-2 hidden"
@@ -14,15 +26,16 @@ function Filter() {
 				className="text-white bg-darkBlue w-full"
 				name="region"
 				id="region"
+				onChange={handleSelect}
 			>
-				<option>Filter by Region</option>
+				<option value="">Filter by Region</option>
 				<option value="africa">Africa</option>
 				<option value="america">America</option>
 				<option value="asia">Asia</option>
 				<option value="europe">Europe</option>
 				<option value="oceania">Oceania</option>
 			</select>
-		</div>
+		</form>
 	);
 }
 

@@ -39,7 +39,7 @@ function Card({ country }) {
 }
 
 Card.propTypes = {
-	country: PropTypes.array,
+	country: PropTypes.object,
 };
 
 export default Card;

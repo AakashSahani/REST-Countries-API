@@ -6,9 +6,11 @@ import Search from '../components/layout/Search';
 import Filter from '../components/layout/Filter';
 
 function Main() {
-	const { countries, getAllCountries } = useContext(CountryContext);
+	const { getAllCountries, filterCountries, countries, filtered } =
+		useContext(CountryContext);
 	useEffect(() => {
 		getAllCountries();
+		filterCountries('');
 	}, []);
 	return (
 		<main className="bg-veryDarkBlueBg text-white p-4 sm:px-[5%]">
@@ -17,9 +19,9 @@ function Main() {
 				<Filter />
 			</div>
 			<div className="flex flex-wrap gap-5">
-				{countries.length === 0
+				{filtered.length === 0
 					? 'Loading Data...'
-					: countries.map((country, index) => (
+					: filtered.map((country, index) => (
 							<Card key={index} country={country} />
 					  ))}
 			</div>

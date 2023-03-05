@@ -7,6 +7,7 @@ const CountryContext = createContext();
 export const CountryProvider = ({ children }) => {
 	const [country, setCountry] = useState([]);
 	const [countries, setCountries] = useState([]);
+	const [filtered, setFiltered] = useState(countries);
 	const getAllCountries = async function () {
 		await fetch('https://restcountries.com/v3.1/all')
 			.then((res) => res.json())
@@ -14,6 +15,7 @@ export const CountryProvider = ({ children }) => {
 			.catch((err) => {
 				alert(err.message);
 			});
+		setFiltered(countries);
 	};
 	const getCountry = async function (countryName) {
 		await fetch(`https://restcountries.com/v3.1/name/${countryName}`)
@@ -23,6 +25,16 @@ export const CountryProvider = ({ children }) => {
 				alert(err.message);
 			});
 	};
+	const filterCountries = (filter) => {
+		const filtered =
+			filter === ''
+				? countries
+				: countries.filter((country) =>
+						country.continents[0].toLowerCase().includes(filter.toLowerCase())
+				  );
+		setFiltered(filtered);
+	};
+
 	return (
 		<CountryContext.Provider
 			value={{
@@ -32,6 +44,9 @@ export const CountryProvider = ({ children }) => {
 				countries,
 				setCountries,
 				getAllCountries,
+				filtered,
+				setFiltered,
+				filterCountries,
 			}}
 		>
 			{children}
