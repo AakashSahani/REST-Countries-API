@@ -11,14 +11,14 @@ function Main() {
 	useEffect(() => {
 		getAllCountries();
 		filterCountries('');
-	}, []);
+	}, [countries]);
 	return (
-		<main className="bg-veryDarkBlueBg text-white p-4 sm:px-[5%]">
+		<main className="bg-veryDarkBlueBg text-white p-4 sm:px-[5%] flex flex-col min-h-screen">
 			<div className="flex flex-col sm:flex-row sm:justify-between sm:items-center sm:mt-5 gap-10 ">
 				<Search />
 				<Filter />
 			</div>
-			<div className="flex flex-wrap gap-5">
+			<div className="flex flex-wrap gap-5 flex-1 h-full justify-center items-center">
 				{filtered.length === 0
 					? 'Loading Data...'
 					: filtered.map((country, index) => (
