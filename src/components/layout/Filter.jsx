@@ -5,9 +5,9 @@ function Filter() {
 	const { filterCountries } = useContext(CountryContext);
 	const [filter, setFilter] = useState('');
 	const handleSelect = (e) => {
-		if (e.currentTarget.value != '') {
-			setFilter(e.currentTarget.value);
-		}
+		// if (e.currentTarget.value != '') {
+		setFilter(e.currentTarget.value);
+		// }
 	};
 	useEffect(() => {
 		filterCountries(filter);
