@@ -1,11 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import sun from '../../assets/sun.svg';
+import moon from '../../assets/moon.svg';
 function Theme({ theme, handleClick }) {
-	const themeState =
-		theme === 'light-theme' ? '🌙 Dark Theme' : '🌞 Light Theme';
 	return (
-		<button className="theme" onClick={handleClick}>
-			{themeState}
+		<button className="flex gap-2" onClick={handleClick}>
+			<img
+				src={theme === 'light' ? moon : sun}
+				alt="Theme Toggle"
+				className="w-7"
+			/>
+			{theme === 'light' ? 'Light' : 'Dark'} theme
 		</button>
 	);
 }

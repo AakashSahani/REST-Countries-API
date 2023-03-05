@@ -12,12 +12,14 @@ function Filter() {
 	}, [filter, countries]);
 
 	return (
-		<form className="flex flex-col w-1/2 sm:w-fit shadow-md rounded-md  px-4 h-12 justify-center items-center">
-			<label htmlFor="region" className=" p-2 hidden" aria-hidden="false">
+		<form
+			className={`bg-white text-veryDarkBlueText dark:bg-darkBlue dark:text-white flex flex-col w-1/2 px-4 sm:w-fit shadow-md rounded-md h-12 justify-center items-center`}
+		>
+			<label htmlFor="region" className="hidden" aria-hidden="false">
 				Filter by Region
 			</label>
 			<select
-				className=" w-full"
+				className="w-full bg-white text-veryDarkBlueText dark:bg-darkBlue dark:text-white"
 				name="region"
 				id="region"
 				onChange={handleSelect}

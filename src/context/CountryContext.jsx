@@ -19,7 +19,7 @@ export const CountryProvider = ({ children }) => {
 	const getCountry = async function (countryName) {
 		await fetch(`https://restcountries.com/v3.1/name/${countryName}`)
 			.then((res) => res.json())
-			.then((data) => setCountry(data))
+			.then((data) => setCountry((country) => data))
 			.catch((err) => {
 				alert(err.message);
 			});
@@ -33,7 +33,6 @@ export const CountryProvider = ({ children }) => {
 				  );
 		setFiltered(filtered);
 	};
-
 	return (
 		<CountryContext.Provider
 			value={{

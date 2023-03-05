@@ -8,18 +8,19 @@ import { CountryProvider } from './context/CountryContext';
 import './index.css';
 
 function App() {
-	const [theme, setTheme] = useState('dark-theme');
+	const [theme, setTheme] = useState('dark');
 	const handleClick = () => {
-		if (theme === 'light-theme') {
-			setTheme('dark-theme');
+		if (theme === 'light') {
+			setTheme('dark');
+			document.body.classList = 'dark';
 		} else {
-			setTheme('light-theme');
+			setTheme('light');
+			document.body.classList = 'light';
 		}
 	};
-	console.log(theme);
 	return (
 		<CountryProvider>
-			<div className={`${theme}`}>
+			<div className="bg-veryLightGrayBg text-veryDarkBlueText dark:bg-veryDarkBlueBg dark:text-white">
 				<Header handleClick={handleClick} theme={theme} />
 				<Router>
 					<Routes>

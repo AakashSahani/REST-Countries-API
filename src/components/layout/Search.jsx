@@ -3,15 +3,14 @@ import CountryContext from '../../context/CountryContext';
 
 function Search() {
 	const [text, setText] = useState('');
-	const { country, getCountry } = useContext(CountryContext);
+	const { getCountry, country } = useContext(CountryContext);
 	const handleChange = (e) => {
 		setText(e.currentTarget.value);
 	};
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
+	const handleSubmit = () => {
+		// e.preventDefault();
 		if (text != '') {
-			console.log(text);
 			getCountry(text);
 			console.log(country);
 		} else {
@@ -22,7 +21,7 @@ function Search() {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className="w-full sm:w-fit md:w-1/3 h-12 flex items-center rounded-md shadow-md"
+			className="bg-white text-veryDarkBlueText dark:bg-darkBlue dark:text-white w-full sm:w-fit md:w-1/3 h-12 flex items-center rounded-md shadow-md"
 		>
 			<input
 				type="text"
@@ -31,7 +30,7 @@ function Search() {
 				value={text}
 				placeholder="Search for a country..."
 				onChange={handleChange}
-				className="w-full h-full px-4 rounded-md"
+				className="bg-white text-veryDarkBlueText dark:bg-darkBlue dark:text-white w-full h-full px-4 rounded-md"
 			/>
 		</form>
 	);
