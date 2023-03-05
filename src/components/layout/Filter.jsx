@@ -2,14 +2,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import CountryContext from '../../context/CountryContext';
 
 function Filter() {
-	const { filterCountries } = useContext(CountryContext);
+	const { filterCountries, countries } = useContext(CountryContext);
 	const [filter, setFilter] = useState('');
 	const handleSelect = (e) => {
 		setFilter(e.currentTarget.value);
 	};
 	useEffect(() => {
 		filterCountries(filter);
-	}, [filter]);
+	}, [filter, countries]);
 
 	return (
 		<form className="flex flex-col w-1/2 sm:w-fit shadow-md rounded-md bg-darkBlue text-white px-4 h-12 justify-center items-center">

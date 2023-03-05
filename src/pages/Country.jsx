@@ -6,12 +6,10 @@ import Search from '../components/layout/Search';
 import Filter from '../components/layout/Filter';
 
 function Main() {
-	const { getAllCountries, filterCountries, countries, filtered } =
-		useContext(CountryContext);
+	const { getAllCountries, filtered } = useContext(CountryContext);
 	useEffect(() => {
 		getAllCountries();
-		filterCountries('');
-	}, [countries]);
+	}, []);
 	return (
 		<main className="bg-veryDarkBlueBg text-white p-4 sm:px-[5%] flex flex-col min-h-screen">
 			<div className="flex flex-col sm:flex-row sm:justify-between sm:items-center sm:mt-5 gap-10 ">

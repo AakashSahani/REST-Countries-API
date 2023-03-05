@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+// import CountryContext from '../../context/CountryContext';
 
 function Search() {
 	const [text, setText] = useState('');
+	// const { country, getCountry } = useContext(CountryContext);
 	const handleChange = (e) => {
 		setText(e.currentTarget.value);
 	};
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
+	const handleSubmit = () => {
 		if (text != '') {
 			console.log(text);
 		} else {

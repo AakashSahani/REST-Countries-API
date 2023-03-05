@@ -15,7 +15,6 @@ export const CountryProvider = ({ children }) => {
 			.catch((err) => {
 				alert(err.message);
 			});
-		setFiltered(countries);
 	};
 	const getCountry = async function (countryName) {
 		await fetch(`https://restcountries.com/v3.1/name/${countryName}`)
