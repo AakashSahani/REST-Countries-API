@@ -11,7 +11,7 @@ function Main() {
 		getAllCountries();
 	}, []);
 	return (
-		<main className="bg-veryDarkBlueBg text-white p-4 sm:px-[5%] flex flex-col min-h-screen">
+		<main className="p-4 sm:px-[5%] flex flex-col min-h-screen">
 			<div className="flex flex-col sm:flex-row sm:justify-between sm:items-center sm:mt-5 gap-10 ">
 				<Search />
 				<Filter />

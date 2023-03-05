@@ -12,11 +12,9 @@ function Detail() {
 		getCountry(countryName);
 	}, [countryName]);
 	return (
-		<main className="flex-1 px-5 flex flex-col h-full py-10 gap-5 justify-evenly bg-veryDarkBlueBg text-white">
+		<main className="flex-1 px-5 md:px-[5%] flex flex-col h-full min-h-screen py-10 gap-5 justify-evenly">
 			<Link to="/">
-				<button className="bg-darkBlue  text-white px-4 h-10 rounded">
-					⬅️ Back
-				</button>
+				<button className="px-4 h-10 rounded">⬅️ Back</button>
 			</Link>
 			{country.length === 0 ? (
 				'Loading Country Info'

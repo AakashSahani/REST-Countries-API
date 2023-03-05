@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+	.light-theme {
+		background-color: theme('backgroundColor.veryLightGrayBg');
+		color: theme('textColor.veryDarkBlueText');
+	}
+	.dark-theme {
+		background-color: theme('backgroundColor.veryDarkBlueBg');
+		color: theme('textColor.white');
+	}
+}

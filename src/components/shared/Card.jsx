@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Card({ country }) {
 	return (
-		<div className="w-80 mx-auto my-10 bg-darkBlue text-white flex flex-col justify-between rounded-md shadow-md min-h-fit h-96">
+		<div className="w-80 mx-auto my-10 flex flex-col justify-between rounded-md shadow-md min-h-fit h-96">
 			{country ? (
 				<Link to={`/country/${country.name.common.toLowerCase()}`}>
 					<img
