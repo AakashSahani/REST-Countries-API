@@ -16,7 +16,7 @@ function Main() {
 				<Search />
 				<Filter />
 			</div>
-			<div className="flex flex-wrap gap-5 flex-1 h-full md:mt-10">
+			<div className="flex flex-wrap gap-12 flex-1 h-full md:mt-10">
 				{filtered.length === 0
 					? 'Loading Data...'
 					: filtered.map((country, index) => (
