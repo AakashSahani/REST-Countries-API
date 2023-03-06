@@ -10,6 +10,13 @@ import './index.css';
 function App() {
 	const [theme, setTheme] = useState('dark');
 	const handleClick = () => {
+		if (theme === 'light') {
+			setTheme('dark');
+		} else {
+			setTheme('light');
+		}
+		localStorage.theme = theme;
+
 		if (
 			localStorage.theme === 'dark' ||
 			(!('theme' in localStorage) &&
@@ -18,16 +25,6 @@ function App() {
 			document.body.classList.add('dark');
 		} else {
 			document.body.classList.remove('dark');
-		}
-
-		if (theme === 'light') {
-			setTheme('dark');
-			localStorage.theme = 'dark';
-			document.body.classList = 'dark';
-		} else {
-			setTheme('light');
-			localStorage.theme = 'light';
-			document.body.classList = 'light';
 		}
 	};
 	useEffect(() => {

@@ -6,7 +6,7 @@ function Theme({ theme, handleClick }) {
 	return (
 		<button className="flex gap-2" onClick={handleClick}>
 			<img
-				src={theme === 'light' ? moon : sun}
+				src={theme === 'light' ? sun : moon}
 				alt="Theme Toggle"
 				className="w-7"
 			/>
