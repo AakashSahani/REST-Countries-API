@@ -67,7 +67,7 @@ function CardDetail({ country }) {
 							? country[0].borders.map((border, index) => (
 									<li
 										key={index}
-										className=" text-center rounded w-32  px-2 py-1"
+										className=" text-center rounded w-32  px-2 py-1  bg-white text-veryDarkBlueText dark:bg-darkBlue dark:text-white shadow-md"
 									>
 										<Link to={`/country/${border}`}>{border}</Link>
 									</li>
