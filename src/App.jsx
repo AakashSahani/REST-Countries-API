@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './components/layout/Header';
 import Main from './pages/Country';
 import Detail from './pages/Detail';
@@ -10,14 +10,29 @@ import './index.css';
 function App() {
 	const [theme, setTheme] = useState('dark');
 	const handleClick = () => {
+		if (
+			localStorage.theme === 'dark' ||
+			(!('theme' in localStorage) &&
+				window.matchMedia('(prefers-color-scheme: dark)').matches)
+		) {
+			document.body.classList.add('dark');
+		} else {
+			document.body.classList.remove('dark');
+		}
+
 		if (theme === 'light') {
 			setTheme('dark');
+			localStorage.theme = 'dark';
 			document.body.classList = 'dark';
 		} else {
 			setTheme('light');
+			localStorage.theme = 'light';
 			document.body.classList = 'light';
 		}
 	};
+	useEffect(() => {
+		handleClick();
+	}, []);
 	return (
 		<CountryProvider>
 			<div className="bg-veryLightGrayBg text-veryDarkBlueText dark:bg-veryDarkBlueBg dark:text-white">
