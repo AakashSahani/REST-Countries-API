@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function CardDetail({ country }) {
-	console.log(country);
-
 	return (
 		<div className="w-full mx-auto gap-4 flex flex-col flex-1 h-full md:flex-row md:items-center md:gap-40 my-4">
 			<img

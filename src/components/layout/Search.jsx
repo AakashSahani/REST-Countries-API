@@ -3,21 +3,30 @@ import CountryContext from '../../context/CountryContext';
 
 function Search() {
 	const [text, setText] = useState('');
-	const { getCountry, country } = useContext(CountryContext);
+	const { countries, setFiltered } = useContext(CountryContext);
 	const handleChange = (e) => {
 		setText(e.currentTarget.value);
+		// remove whitespaces
+		if (text.replace(/\s/g, '').length != 0) {
+			let result = countries.filter(
+				(country) =>
+					country.name.common
+						.toLocaleLowerCase()
+						.startsWith(text.toLocaleLowerCase()) ||
+					country.name.official
+						.toLocaleLowerCase()
+						.startsWith(text.toLocaleLowerCase())
+			);
+			setFiltered(result);
+		} else {
+			setFiltered(countries);
+		}
 	};
 
-	const handleSubmit = () => {
-		// e.preventDefault();
-		if (text != '') {
-			getCountry(text);
-			console.log(country);
-		} else {
-			console.log('please enter a value');
-		}
-		setText('');
+	const handleSubmit = (e) => {
+		e.preventDefault();
 	};
+
 	return (
 		<form
 			onSubmit={handleSubmit}
