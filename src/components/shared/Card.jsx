@@ -6,7 +6,11 @@ function Card({ country }) {
 	return (
 		<div className="w-72  bg-white text-veryDarkBlueText dark:bg-darkBlue dark:text-white mx-auto md:mx-0 my-10 flex flex-col justify-between rounded-md shadow-md min-h-fit h-96">
 			{country ? (
-				<Link to={`/country/${country.name.common.toLowerCase()}`}>
+				<Link
+					to={`/country/${country.name.common
+						.toLowerCase()
+						.replace(/\s/g, '_')}`}
+				>
 					<div className="w-full h-48">
 						<img
 							src={country.flags.svg}

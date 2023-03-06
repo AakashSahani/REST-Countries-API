@@ -9,7 +9,7 @@ function Detail() {
 	const { country, getCountry } = useContext(CountryContext);
 	const { name: countryName } = useParams();
 	useEffect(() => {
-		getCountry(countryName);
+		getCountry(countryName.replace(/_/g, ' '));
 	}, [countryName]);
 	return (
 		<main className="flex-1 px-5 md:px-[5%] flex flex-col h-full min-h-screen py-10 gap-5 justify-evenly">

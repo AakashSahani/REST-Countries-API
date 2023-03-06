@@ -20,7 +20,7 @@ function Filter() {
 			</label>
 			<select
 				className="w-full bg-white text-veryDarkBlueText dark:bg-darkBlue dark:text-white"
-				name="region"
+				name="Country Region"
 				id="region"
 				onChange={handleSelect}
 			>
