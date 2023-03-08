@@ -29,7 +29,7 @@ export const CountryProvider = ({ children }) => {
 			filter === ''
 				? countries
 				: countries.filter((country) =>
-						country.continents[0].toLowerCase().includes(filter.toLowerCase())
+						country.region.toLowerCase().startsWith(filter.toLowerCase())
 				  );
 		setFiltered(filtered);
 	};

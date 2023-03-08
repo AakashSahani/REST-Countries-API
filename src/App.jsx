@@ -9,14 +9,7 @@ import './index.css';
 
 function App() {
 	const [theme, setTheme] = useState('dark');
-	const handleClick = () => {
-		if (theme === 'light') {
-			setTheme('dark');
-		} else {
-			setTheme('light');
-		}
-		localStorage.theme = theme;
-
+	const getTheme = () => {
 		if (
 			localStorage.theme === 'dark' ||
 			(!('theme' in localStorage) &&
@@ -27,8 +20,19 @@ function App() {
 			document.body.classList.remove('dark');
 		}
 	};
+	const handleClick = () => {
+		if (theme === 'light') {
+			setTheme('dark');
+		} else {
+			setTheme('light');
+		}
+		localStorage.theme = theme;
+		document.body.classList = theme;
+		// getTheme();
+	};
+
 	useEffect(() => {
-		handleClick();
+		getTheme();
 	}, []);
 	return (
 		<CountryProvider>
